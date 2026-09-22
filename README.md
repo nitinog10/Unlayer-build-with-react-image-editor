@@ -1,12 +1,31 @@
-# Unlayer Build with React Image Editor
+# Vice City · Loading Screen Studio
 
-> **A creative monorepo featuring a Grand Theft Auto VI–inspired loading screen studio and the official React Image Editor source library by Unlayer.**
+A creative showcase featuring a Grand Theft Auto VI–inspired loading screen studio, built alongside the official React Image Editor source library by Unlayer.
 
-[![React 19](https://img.shields.io/badge/React-19.x-61dafb?style=flat-square&logo=react)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-6.x-3178c6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-8.x-646cff?style=flat-square&logo=vite)](https://vite.dev/)
-[![Unlayer](https://img.shields.io/badge/Powered%20By-React%20Image%20Editor-ff3568?style=flat-square)](https://github.com/unlayer/react-image-editor)
-[![Challenge](https://img.shields.io/badge/Challenge-%23BuiltWithImageEditor-ff8a3d?style=flat-square)](https://github.com/unlayer/react-image-editor)
+![Vice City Loading Screen Studio](./vice-city-loading-studio/docs/hero.png)
+
+## What I Built
+
+I built **Vice City Loading Screen Studio** — a cinematic, in-browser GTA loading screen generator and "Photo Mode" suite. It allows users to upload any image, manipulate it using a robust photo editor, and drop it seamlessly into a styled, animated Grand Theft Auto loading screen layout complete with diegetic UI elements like a Wanted Level, authentic License Plates, and satirical Leonida resident hustles (e.g., Repo Man, Crypto Guy).
+
+**Key Features:**
+- **Photo Mode Engine**: Client-side cropping, filtering, custom text overlays, sticker placement, frames, and freehand drawing.
+- **Cinematic Visuals**: Duotone LUT color washes that capture the Miami golden hour and neon dusk lighting, paired with sleek glassmorphic UI elements and micro-animations.
+- **100% Client-Side Privacy**: Zero server uploads; images are processed entirely in-memory and exported in lossless high resolution.
+
+## Why I Built It
+
+This project was built for the **#BuiltWithImageEditor challenge** to showcase the immense flexibility of modern web tools. I wanted to demonstrate how a seemingly standard utility component — an image editor — could be fully themed and integrated into a highly immersive, narrative-driven experience. The iconic aesthetic of GTA loading screens (the neon, the saturation, the pulp-cover vibe) served as the perfect playground to push the limits of client-side canvas manipulation and UI design.
+
+## How React Image Editor Was Brought In
+
+Integrating `@unlayer/react-image-editor` was the core enabler of the "Photo Mode" experience. Here’s how I brought it in:
+
+1. **Seamless Integration**: Instead of building a complex canvas-based editing suite from scratch, I dropped the React Image Editor into a dedicated `Studio.tsx` component. This instantly gave me out-of-the-box features like cropping, color adjustments, drawing, and sticker placement.
+2. **Headless & Styled Approach**: I wrapped the editor in a custom diegetic "HUD" that fits the overarching theme. The editor's controls fade seamlessly into the "camera UI" aesthetic, while the actual photo is manipulated directly within the editor's canvas.
+3. **Data Export & Composition**: Once the user finishes editing, the React Image Editor exports a `dataUrl`. I then take this baked image and pass it into a custom `LoadingCard.tsx` React component. There, the image is layered behind custom CSS gradients (for that cinematic color grade), SVGs, and dynamic typography to create the final "loading screen" artifact.
+
+By leveraging the React Image Editor, I could focus entirely on the *experience* and the *art direction* rather than reinventing image processing math.
 
 ---
 
@@ -14,23 +33,10 @@
 
 | Project | Description | Path |
 | :--- | :--- | :--- |
-| 🌴 **[Vice City Loading Screen Studio](./vice-city-loading-studio)** | A cinematic, in-browser GTA loading screen generator and Photo Mode suite built with `@unlayer/react-image-editor`. Features live Leonida telemetry, radio tuner, 5-star wanted ratings, duotone LUT color washes, and high-DPI 2X PNG export. | [`./vice-city-loading-studio`](./vice-city-loading-studio) |
+| 🌴 **[Vice City Loading Screen Studio](./vice-city-loading-studio)** | The main application. A cinematic, in-browser GTA loading screen generator built with `@unlayer/react-image-editor`. | [`./vice-city-loading-studio`](./vice-city-loading-studio) |
 | 🎨 **[React Image Editor](./react-image-editor)** | The official React wrapper and headless image editing library by Unlayer. | [`./react-image-editor`](./react-image-editor) |
 
----
-
-## Featured Application: Vice City · Loading Screen Studio
-
-![Vice City Loading Screen Studio](./vice-city-loading-studio/docs/hero.png)
-
-### Key Features
-- **Unlayer Photo Mode Engine**: Seamless client-side cropping, filters, custom text, stickers, frames, and freehand drawing.
-- **Cinematic Color Grading**: Duotone LUT washes capturing Miami golden hour and neon dusk lighting.
-- **Diegetic HUD & Satire**: 5-star wanted ratings, authentic Florida license plates, and satirical Leonida resident hustles (Repo Man, Crypto Guy, Gator Wrangler, Yacht Broker).
-- **Interactive Leonida Radio Network**: Diegetic tuner featuring Flash FM (105.6), Wave 103 (103.2), Fever 105 (105.2), and V-Rock (98.3) with animated visualizers.
-- **100% Client-Side Privacy**: Zero server uploads; images are processed in-memory and exported in lossless 2X resolution.
-
-### Quick Start
+## Quick Start
 
 ```bash
 # Navigate to the studio application
@@ -43,9 +49,7 @@ npm install
 npm run dev
 ```
 
-Visit [`http://localhost:5173`](http://localhost:5173) in your browser.
-
-For full architectural details, art direction background, and integration guides, please see the [**Vice City Studio README**](./vice-city-loading-studio/README.md).
+Visit [`http://localhost:5173`](http://localhost:5173) in your browser to experience the studio!
 
 ---
 
