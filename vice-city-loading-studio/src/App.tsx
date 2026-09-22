@@ -41,7 +41,15 @@ export default function App() {
         <div className="fx-scan" />
       </div>
 
-      {stage === 'intro' && <Hero onEnter={() => setStage('studio')} />}
+      {stage === 'intro' && (
+        <Hero
+          onEnter={(selectedChar, selectedImg) => {
+            if (selectedChar) setCharacter(selectedChar);
+            if (selectedImg) setImage(selectedImg);
+            setStage('studio');
+          }}
+        />
+      )}
 
       {stage === 'studio' && (
         <Studio
