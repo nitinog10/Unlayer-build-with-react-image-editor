@@ -83,6 +83,20 @@ select {
     linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 56%, #17131f 100%);
 }
 
+.fx-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  opacity: 0.6;
+  z-index: 0;
+}
+
 .fx-sun {
   position: absolute;
   left: 50%;

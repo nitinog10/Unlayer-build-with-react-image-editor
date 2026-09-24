@@ -34,12 +34,18 @@ export default function App() {
 
   return (
     <>
-      <div className="fx" aria-hidden="true">
-        <div className="fx-sky" />
-        <div className="fx-sun" />
-        <div className="fx-grain" />
-        <div className="fx-scan" />
-      </div>
+    <div className="fx" aria-hidden="true">
+      <video
+        src="/bg-video.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="fx-video"
+      />
+      <div className="fx-grain" />
+      <div className="fx-scan" />
+    </div>
 
       {stage === 'intro' && <Hero onEnter={() => setStage('studio')} />}
 
