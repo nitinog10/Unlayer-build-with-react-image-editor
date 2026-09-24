@@ -38,6 +38,14 @@ export default function Hero({ onEnter }: { onEnter: () => void }) {
       </nav>
 
       <header className="hero">
+        <video
+          src="/bg-video.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="hero-video"
+        />
         <div className="hero-copy">
 
 

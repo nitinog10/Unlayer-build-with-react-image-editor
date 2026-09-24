@@ -83,20 +83,6 @@ select {
     linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 56%, #17131f 100%);
 }
 
-.fx-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  opacity: 0.4;
-  z-index: 0;
-}
-
 .fx-sun {
   position: absolute;
   left: 50%;
@@ -285,15 +271,33 @@ select {
 /* ---- Hero ---- */
 .hero {
   position: relative;
-  min-height: calc(100vh - 62px);
+  min-height: calc(100vh - 110px);
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
   gap: clamp(24px, 5vw, 72px);
-  width: var(--shell);
-  margin: 0 auto;
-  padding: clamp(32px, 6vh, 80px) 0 120px;
-  overflow: visible;
+  width: calc(100% - 48px);
+  max-width: 1600px;
+  margin: 24px auto;
+  padding: clamp(32px, 6vh, 80px) clamp(24px, 5vw, 80px) 120px;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.85;
+}
+
+.hero-copy, .hero-visual {
+  position: relative;
+  z-index: 1;
 }
 
 /* Slatted retro sun — sits behind the mock card as its glow */
